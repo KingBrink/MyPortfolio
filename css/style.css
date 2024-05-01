@@ -1,0 +1,71 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: black;
+    --secondary: white;
+    --alternative: green;
+    --awesome: orange;
+    --mainBoxShadow: blue;
+    --cardBoxShadow:.5vw .5vw .2vw var(--alternative);
+    --textShadow: .2vw .2vw .1vw var(--awesome);
+}
+
+/* */
+:is(header){
+    background-color: aqua;
+}
+/* display flex */
+:is(header, .menu-list){
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    margin-right: .2rem;
+
+    & img[alt-"logo"]{
+        width: 5rem;
+        transition: transform 1s;
+    }
+    & [class] li {
+        margin-inline: 1rem;
+        list-style: none;
+    }
+    & a {
+        transition: transform 2s;
+        text-decoration: none;
+        &:link{
+            color: var(--secondary);
+        }
+    }
+    & :hover{
+        color: var(--awesome);
+        font-weight: bolder;
+        background-color: aquamarine;
+        border-radius: .2rem;
+        padding-inline: .5rem;
+        text-decoration: solid;
+
+
+    }
+    & :is(img:hover) {
+        transform: scale(1.06);
+    }
+}
+
+.menu-list{
+    margin-left: auto;
+}
+
+.menu {
+    align-items: center;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+}
